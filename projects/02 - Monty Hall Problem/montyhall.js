@@ -56,7 +56,7 @@ function updateDoors() {
 			door.removeEventListener("click",updateDoors);
 		});
 		document.getElementById("link").innerHTML = "Play Again!";
-		document.getElementById("link").href = "index.html";
+		document.getElementById("link").href = "projects/02 - Monty Hall Problem/index.html";
 		document.getElementById("link").target = "_top";
 	}
 };
