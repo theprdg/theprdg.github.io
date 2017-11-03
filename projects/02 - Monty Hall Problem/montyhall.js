@@ -56,7 +56,7 @@ function updateDoors() {
 			door.removeEventListener("click",updateDoors);
 		});
 		document.getElementById("link").innerHTML = "Play Again!";
-		document.getElementById("link").href = "02 - Monty Hall Game.html";
+		document.getElementById("link").href = "index.html";
 		document.getElementById("link").target = "_top";
 	}
 };
