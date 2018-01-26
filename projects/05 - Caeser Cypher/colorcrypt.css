@@ -58,14 +58,14 @@ body {
 	resize: none;
 }
 
-body #container2{
+#container2{
 	float: left;
 	width: 100%;
 	padding: 10px;
 	box-sizing: border-box;
 }
 
-#container2 div#output {
+#output {
 	background: rgba(255,255,255,0.5);
 	width: 100%;
 	height: 49vh;
