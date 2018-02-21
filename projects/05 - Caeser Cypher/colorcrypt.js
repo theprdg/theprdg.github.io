@@ -37,8 +37,7 @@ $(window).keypress(function(event){
 		$(this).unbind("keypress");
 		$("#container").fadeIn(500);
 		$("#container2").fadeIn(500);
-	}
-	else if (keyCount == pw.length){
+	} else if (keyCount == pw.length) {
 		keyCount = 0;
 		login = '';
 	}
@@ -54,39 +53,34 @@ $("#decryptbtn").click(crypt);
 function crypt() {
 	final = '';
 
-	if (status == 1) {
-		message = $("#encrypt").val();
-	}
-	else {
-		message = $("#decrypt").val();
-	}
+	message = (status == 1 ? $("#encrypt").val():$("#decrypt").val());
+	// if (status == 1) {
+	// 	message = $("#encrypt").val();
+	// }
+	// else {
+	// 	message = $("#decrypt").val();
+	// }
 
 	for(var i = 0; i < message.length; i++) {
 		if(message[i].charCodeAt() == 10) {
 			final += String.fromCharCode(32);
-		}
-		else if (status == 1) {
+		} else if (status == 1) {
 			if (message[i].charCodeAt()+5 > 126) {
 				if (message[i].charCodeAt()+5-95 == 32) {
 					final += '\xa0';
-				}
-				else {
+				} else {
 					final += String.fromCharCode(message[i].charCodeAt()+5 - 95);
 				}
-			}
-			else {
+			} else {
 				final += String.fromCharCode(message[i].charCodeAt()+5);
 			}
-		}
-		else {
+		} else {
 			if (message[i].charCodeAt()-5 < 32) {
 					final += String.fromCharCode(message[i].charCodeAt()-5 + 95);
-			}
-			else {
+			} else {
 				if (message[i].charCodeAt()-5 == 32) {
 					final += '\xa0';
-				}
-				else {
+				} else {
 					final += String.fromCharCode(message[i].charCodeAt()-5);
 				}
 			}
